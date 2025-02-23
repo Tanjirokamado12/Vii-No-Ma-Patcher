@@ -102,7 +102,7 @@ start "HxD" "C:\viinoma\HxD.exe" "C:\viinoma\00000001.app"
 echo.
 echo After HxD opens, follow these instructions:
 echo 1. Locate the URL .wapp.wii.com in the file.
-echo 2. If your chosen version is v770 or v0/v512, replace the URL with the new one as needed.
+echo 2. If your chosen version is v770 or v0/v512, replace the URL with the new one as needed.if you use dolphin you can set 127.0.0.1
 echo 3. For version v770, replace %sconf/first.bin with %sv770/first.bin.
 echo 4. For versions v0/v512, replace %sconf/first.bin with %sv512/first.bin
 echo 5. For v1025, replace https://originalurl/conf/first.bin with http://Newurl/v1025/first.bin
