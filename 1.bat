@@ -102,7 +102,7 @@ start "HxD" "C:\viinoma\HxD.exe" "C:\viinoma\00000001.app"
 echo.
 echo After HxD opens, follow these instructions:
 echo 1. Locate the URL .wapp.wii.com in the file.
-echo 2. If your chosen version is v770 or v0/v512, replace the URL with the new one as needed.if you use dolphin you can set 127.0.0.1
+echo 2. If your chosen version is v770 or v0/v512, replace the URL with the new one as needed.
 echo 3. For version v770, replace %sconf/first.bin with %sv770/first.bin.
 echo 4. For versions v0/v512, replace %sconf/first.bin with %sv512/first.bin
 echo 5. For v1025, replace https://originalurl/conf/first.bin with http://Newurl/v1025/first.bin
@@ -119,6 +119,8 @@ if "%ERRORLEVEL%"=="0" (
     goto wait_for_HxD
 )
 
+del 00000001.app.bak
+
 :: Run lzx -evb command
 echo Running lzx -evb on 00000001.app...
 lzx -evb "%patcherLocation%\00000001.app" "%patcherLocation%\00000001.app"
@@ -127,7 +129,10 @@ if errorlevel 1 (
     echo Failed to run lzx -evb. Please check if lzx is available and try again.
     exit /b
 )
-
+cd temp
+del 00000001.app
+cd..
+copy c:\viinoma\00000001.app  c:\viinoma\temp\00000001.app
 :: Run Sharpii.exe to pack the .wad file
 echo.
 echo Packing the .wad file using Sharpii.exe...
